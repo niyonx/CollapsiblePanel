@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"
+    id="bootstrap-css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+
+  <style rel="stylesheet">
+    .ms-breadcrumb-box {
+      padding-bottom: 0px;
+    }
+
+    * {
+      box-sizing: initial;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin: 0em;
+    }
+
+    .ms-core-header .ms-core-listMenu-item,
+    .ms-core-header .ms-core-listMenu-item:link,
+    .ms-core-header .ms-core-listMenu-item:visited,
+    .ms-core-header .ms-tv-item:link,
+    .ms-core-header .ms-tv-item:visited,
+    .ms-core-header .ms-tv-header:link,
+    .ms-core-header .ms-tv-header:visited {
+      color: #000000;
+    }
+
+    #pageContentTitle {
+      display: none;
+    }
+
+    .panel-primary>.panel-heading {
+      border-color: rgb(0, 0, 0, 0.0075)
+    }
+
+
+    .ms-pub-contentLayout {
+      background-color: rgba(255, 255, 253, 0.50);
+    }
+
+    #titlerow {
+      background-color: rgba(255, 255, 255, 0.65);
+    }
+
+    /* .ms-breadcrumb-box {
+ padding-top: 22px;
+ padding-bottom: 15px;
+ } */
+
+    .panel {
+      font-size: 15px;
+      border: 0px;
+      width: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: left;
+    }
+
+    .panel-table {
+      border-collapse: separate;
+      border-spacing: 0.1em;
+    }
+
+    .panel-table td {
+      width: 120px;
+      text-align: center;
+      border: 0px solid black;
+      padding: 4px
+    }
+
+    .row {
+      margin-top: 40px;
+      padding: 0 10px;
+    }
+
+    .clickable {
+      cursor: pointer;
+    }
+
+    .panel-body {
+      height: 110px;
+      display: flex;
+      text-align: left;
+      align-items: center;
+    }
+
+    .panel-heading span {
+      margin-top: -20px;
+      font-size: 15px;
+    }
+
+    .panel-footer span {
+      margin-top: -20px;
+    }
+
+    #panel-img {
+      margin-right: 10px
+    }
+
+    /* .panel a:visited {
+ color: white;
+ } */
+
+    .panel a {
+      color: white;
+    }
+
+    #p1>.panel-heading {
+      background-image: none;
+      background-color: rgb(0, 25, 67);
+      color: white;
+    }
+
+    #p1>.panel-body {
+      background-image: none;
+      background-color: rgb(38, 59, 95);
+      color: white;
+    }
+
+    #p1>.panel-footer {
+      background-image: none;
+      background-color: rgb(78, 94, 123);
+      color: white;
+    }
+
+    #p2>.panel-heading {
+      background-image: none;
+      background-color: rgb(0, 133, 89);
+      color: white;
+    }
+
+    #p2>.panel-body {
+      background-image: none;
+      background-color: rgb(38, 151, 114);
+      color: white;
+    }
+
+    #p2>.panel-footer {
+      background-image: none;
+      background-color: rgb(76, 169, 138);
+      color: white;
+    }
+
+    #p3>.panel-heading {
+      background-image: none;
+      background-color: rgb(200, 83, 0);
+      color: white;
+    }
+
+    #p3>.panel-body {
+      background-image: none;
+      background-color: rgb(208, 109, 38);
+      color: white;
+    }
+
+    #p3>.panel-footer {
+      background-image: none;
+      background-color: rgb(216, 134, 76);
+      color: white;
+    }
+
+    #p4>.panel-heading {
+      background-image: none;
+      background-color: rgb(126, 3, 126);
+      color: white;
+    }
+
+    #p4>.panel-body {
+      background-image: none;
+      background-color: rgb(145, 41, 145);
+      color: white;
+    }
+
+    #p4>.panel-footer {
+      background-image: none;
+      background-color: rgb(164, 78, 164);
+      color: white;
+    }
+
+    #p5>.panel-heading {
+      background-image: none;
+      background-color: rgb(156, 0, 47);
+      color: white;
+    }
+
+    #p5>.panel-body {
+      background-image: none;
+      background-color: rgb(171, 38, 78);
+      color: white;
+    }
+
+    #p5>.panel-footer {
+      background-image: none;
+      background-color: rgb(186, 76, 109);
+      color: white;
+    }
+
+    #p6>.panel-heading {
+      background-image: none;
+      background-color: rgb(217, 147, 0);
+      color: white;
+    }
+
+    #p6>.panel-body {
+      background-image: none;
+      background-color: rgb(223, 163, 38);
+      color: white;
+    }
+
+    #p6>.panel-footer {
+      background-image: none;
+      background-color: rgb(228, 170, 76);
+      color: white;
+    }
+
+    #p7>.panel-heading {
+      background-image: none;
+      background-color: rgb(0, 75, 118);
+      color: white;
+    }
+
+    #p7>.panel-body {
+      background-image: none;
+      background-color: rgb(38, 102, 138);
+      color: white;
+    }
+
+    #p7>.panel-footer {
+      background-image: none;
+      background-color: rgb(76, 129, 159);
+      color: white;
+    }
+
+    #p8>.panel-heading {
+      background-image: none;
+      background-color: rgb(112, 107, 108);
+      color: white;
+    }
+
+    #p8>.panel-body {
+      background-image: none;
+      background-color: rgb(133, 129, 130);
+      color: white;
+    }
+
+    #p8>.panel-footer {
+      background-image: none;
+      background-color: rgb(155, 151, 152);
+      color: white;
+    }
+
+    .panel-title>img {
+      padding-right: 5px;
+    }
+  </style>
+
+  <script>
+
+    $(document.body).on('click', '#user', function (e) {
+      e.preventDefault();
+      router.navigate('/user');
+    });
+
+    $(document).on('click', '.panel-heading span.clickable', function (e) {
+      var $this = $(this);
+      if (!$this.hasClass('panel-collapsed')) {
+        $this.parents('.panel').find('.panel-body').slideUp();
+        $this.addClass('panel-collapsed');
+        $this.find('i').removeClass('glyphicon-minus').addClass('glyphicon-plus');
+      } else {
+        $this.parents('.panel').find('.panel-body').slideDown();
+        $this.removeClass('panel-collapsed');
+        $this.find('i').removeClass('glyphicon-plus').addClass('glyphicon-minus');
+      }
+    })
+
+  </script>
+</head>
+
+<body>
+  <table class="col-xs-12 panel-table">
+    <tr>
+      <td>
+        <div id="p1" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><img src="." height="30">Knowledge Management/ PDS</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+          </div>
+          <div class="panel-body">
+            <table style="margin-left: 5%; width:100%">
+              <tr>
+                <td style="text-align: left"><a href=".">Knowledge
+                    Management Library</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Governance
+                    Library</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Engineering
+                    Knowledge Domains</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <a href=".">
+              <h3 class="panel-title">Site</h3>
+              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div id="p2" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><img src="." height="30">Strat Tech/ Innovation</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+          </div>
+          <div class="panel-body">
+            <table style="margin-left: 5%; width:100%">
+              <tr>
+                <td style="text-align: left"><a href=".">Technology
+                    Roadmaps</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Strat
+                    Tech Projects</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <a href=".">
+              <h3 class="panel-title">Site</h3>
+              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div id="p3" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><img src="." height="30">Talent Development</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+          </div>
+          <div class="panel-body">
+            <table style="margin-left: 5%; width:100%">
+              <tr>
+                <td style="text-align: left"><a href=".">Engineering
+                    Talent
+                  </a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Fellows</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Knowledge
+                    Owners</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <a href=".">
+              <h3 class="panel-title">Site</h3>
+              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div id="p4" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><img src="." height="30">K Sharing</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+          </div>
+          <div class="panel-body">
+            <table style="margin-left: 5%; width:100%">
+              <tr>
+                <td style="text-align: left"><a href=".">Upcoming
+                    Conferences</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Conference
+                    Archives</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">BT</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <a href=".">
+              <h3 class="panel-title">Site</h3>
+              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div id="p5" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><img src="." height="30">Programs</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+          </div>
+          <div class="panel-body">
+            <table style="margin-left: 5%; width:100%">
+              <tr>
+                <td style="text-align: left"><a href=".">Product
+                    Development</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Global</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Challenger</a></td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Learjet</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <a href=".">
+              <h3 class="panel-title">Site</h3>
+              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div id="p6" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><img src="." height="30">Certification</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+          </div>
+          <div class="panel-body">
+            <table style="margin-left: 5%; width:100%">
+              <tr>
+                <td style="text-align: left"><a href=".">DADs</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <a href=".">
+              <h3 class="panel-title">Site</h3>
+              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div id="p7" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><img src="." height="30">In-Service/ Cost-efficiencies</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+          </div>
+          <div class="panel-body">
+            <table style="margin-left: 5%; width:100%">
+              <tr>
+                <td style="text-align: left"><a href=".">PCRS</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Customer
+                    Service</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <a href=".">
+              <h3 class="panel-title">Site</h3>
+              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div id="p8" class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><img src="." height="30">Supply Chain</h3>
+            <span class="pull-right clickable"><i class="glyphicon glyphicon-minus"></i></span>
+          </div>
+          <div class="panel-body">
+            <table style="margin-left: 5%; width:100%">
+              <tr>
+                <td style="text-align: left"><a href=".">Partners</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="text-align: left"><a href=".">Projects</a>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="panel-footer">
+            <a href=".">
+              <h3 class="panel-title">Site</h3>
+              <span class="pull-right clickable"><i class="glyphicon glyphicon-chevron-right"></i></span>
+            </a>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
